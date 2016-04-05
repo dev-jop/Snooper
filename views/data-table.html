@@ -1,0 +1,61 @@
+<div class="container" data-ng-controller="tableCtrl as tctrl">
+
+    <div class="card">
+        <div class="card-header">
+            <h2>All Posts <small>View, Add, Edit and Delete Blog Posts</small></h2>
+            <div class="block-header">
+                <span>
+                    <!--<button class="btn bgm-lightblue btn-icon" style="float: right;" data-swal-create-mission><i class="zmdi zmdi-plus"></i></button>-->
+                    <button class="btn bgm-lightblue btn-icon" style="float: right;" data-backdrop="static" data-keyboard="false"  data-toggle="modal" data-target="#myModal"><i class="zmdi zmdi-plus"></i></button>
+                    <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+                </span>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table ng-table="tctrl.tableEdit" class="table table-striped table-vmiddle">
+                    <colgroup>
+                        <col width="100">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="150">
+                    </colgroup>
+                    <tbody ui:sortable ng:model="data">
+                    <tr ng-repeat="w in $data"
+                        ng-click="user.$selected = !user.$selected; "
+                        ng-class="{'active': user.$selected}"
+                        class="item" style="cursor: move;">
+                        <td data-title="'ID'">
+                            {{ w.id }}
+                        </td>
+                        <td data-title="'IMAGE'">
+                            {{ w.name }}
+                        </td>
+                        <td data-title="'POST TITLE'">
+                            {{ w.email }}
+                        </td>
+                        <td data-title="'PUBLISH DATE'">
+                            {{ w.username }}
+                        </td>
+                        <td data-title="'AUTHOR'">
+                            {{ w.name }}
+                        </td>
+                        <td data-title="'COMMENTS'">
+                            {{ w.name }}
+                        </td>
+                        <td data-title="'ACTIONS'">
+                            <button type="button" class="btn btn-danger btn-sm" ng-if="!w.$edit" ng-click="w.$edit = false"><i class="zmdi zmdi-close"></i></button>
+                            <button type="button" class="btn btn-primary btn-sm" ng-if="!w.$edit" ng-click="w.$edit = false"><i class="zmdi zmdi-search"></i></button>
+                            <button type="button" class="btn btn-success btn-sm" ng-if="!w.$edit" ng-click="w.$edit = false"><i class="zmdi zmdi-arrows"></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </tbody>
+            </div>
+        </div>
+    </div>
+</div>

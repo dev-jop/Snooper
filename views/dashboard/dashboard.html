@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="mini-charts">
+        <div class="row">
+            <div class="col-sm-3"> <!-- chart 1 -->
+                <div class="mini-charts-item bgm-cyan">
+                    <div class="clearfix">
+                        <div class="chart stats-bar" data-sparkline-bar></div>
+                        <div class="count">
+                            <small>Website Traffics</small>
+                            <h2>987,459</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3"> <!-- chart 2 -->
+                <div class="mini-charts-item bgm-lightgreen">
+                    <div class="clearfix">
+                        <div class="chart stats-bar-2" data-sparkline-bar></div>
+                        <div class="count">
+                            <small>Website Impressions</small>
+                            <h2>356,785K</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3"> <!-- chart 3 -->
+                <div class="mini-charts-item bgm-red">
+                    <div class="clearfix">
+                        <div class="chart stats-line" data-sparkline-line></div>
+                        <div class="count">
+                            <small>Total Sales</small>
+                            <h2>$ 458,778</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3"> <!-- chart 4 -->
+                <div class="mini-charts-item bgm-orange">
+                    <div class="clearfix">
+                        <div class="chart stats-line" data-sparkline-line></div>
+                        <div class="count">
+                            <small>Total Sales</small>
+                            <h2>$ 458,778</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div ng-controller="dashboardItems as dash">-->
+        <!--<div ng-repeat="items in dash.dashitems">-->
+            <!--<div ng-repeat="item in items" class="col-md-4" ng-include="dash.tileselection(item.type)">-->
+                <!--<div class="col-md-4">-->
+
+                <!--</div>-->
+                <!--<div class="col-md-4">-->
+
+                <!--</div>-->
+                <!--<div class="col-md-4">-->
+
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div ng-controller="dashboardItems as dash">
+        <div ng-repeat="items in dash.dashitems" class="col-md-4"> <!-- should iterate 3 times -->
+            <div ng-repeat="item in items" ng-include="dash.tileselection(item.type)">
+            </div>
+        </div>
+    </div>
+</div>

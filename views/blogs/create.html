@@ -1,0 +1,71 @@
+<!-- Modal -->
+<div>
+    <!--<div ng-controller="likesAndInterests as likes" style="height: 200px" id="mydrop">-->
+        <!--<div ng-dropdown-multiselect="" options="likes.example1data" selected-model="likes.example1model"></div>-->
+        <!--&lt;!&ndash;<div ng-dropdown-multiselect options="likes.example11data" selected-model="likes.example11model" extra-settings="likes.example11settings" group-by="gender"></div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div ng-dropdown-multiselect="" options="likes.example12data" selected-model="likes.example12model" extra-settings="likes.example12settings"></div>&ndash;&gt;-->
+    <!--</div>-->
+    <!--<br><br><br>-->
+    <div class="card">
+        <div class="container" ng-controller="createblog as cblog">
+            <br>
+            <div class="row">
+                <div class="col-md-8">
+                    <!--<h4 class="modal-title">Add New Blog Post</h4>-->
+                    <h4 class="modal-title">Add New Blog Post<br><small>Ensure all fields are filled out including 'Featured Image'</small></h4>
+                    <!--<p>Ensure all fields are filled out including 'Featured Image'</p>-->
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-lg btn-success" style="width: 200px;" ng-click="cblog.submit(); blog.changeLoad(1)" data-swal-success-form>PUBLISH</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="zmdi zmdi-font"></i></span>
+                        <div class="fg-line">
+                            <input type="text" class="form-control" placeholder="Title" ng-model="cblog.title">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon" style="position: relative; bottom: 200px;"><i class="zmdi zmdi-comment-alt"></i></span>
+                        <p class="c-black f-500 m-t-10 m-b-30" style="display: inline-block;">Post Content</p>
+
+                        <div text-angular ng-model="cblog.blogcontent"></div>
+                        <!--<div class="fg-line">-->
+                            <!--<textarea class="form-control" rows="12" placeholder="Start typing..." ng-model="cblog.postcontent"></textarea>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <p class="f-500 c-black m-b-20">Featured Image</p>
+
+                    <!--<div class="fileinput fileinput-new" data-provides="fileinput">-->
+                        <!--<span class="btn btn-primary btn-file m-r-10">-->
+                            <!--<span class="fileinput-new">Select image</span>-->
+                            <!--<span class="fileinput-exists">Change</span>-->
+                            <!--<input type="file" name="..." ng-model="tctrl.Profileimage">-->
+                        <!--</span>-->
+                        <!--<span class="fileinput-filename"></span>-->
+                        <!--<a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>-->
+                    <!--</div>-->
+
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <div class="fileinput-preview thumbnail" data-trigger="fileinput"></div>
+                        <div>
+                            <span class="btn btn-info btn-file">
+                                <span class="fileinput-new">Select image</span>
+                                <span class="fileinput-exists">Change</span>
+                                <input type="file" name="..." ng-model="cblog.image" id="picture">
+                            </span>
+                            <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+        </div>
+    </div>
+</div>

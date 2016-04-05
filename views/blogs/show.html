@@ -1,0 +1,92 @@
+<div class="container">
+    <!-- The Blog Post -->
+    <div ng-controller="blogControl as blogC" class="showblog">
+        <!-- The Card Section -->
+        <p>The Value of check {{blogC.myArr}}</p>
+        <div class="card">
+            <img ng-src={{blogC.checkO}} class="img-rounded" alt="Blog Image" height="250px" width="100%">
+            <h3 style="position: relative; left: 20px; top: -60px; color: white;">{{blogC.checkO.get("blogTitle")}}<span ng-model=""></span></h3>
+            <!-- Likes and shares -->
+            <div>
+                <!-- The left side buttons -->
+                <div style="padding: 0px 10px">
+                    <div class="lv-body">
+
+                        <div class="lv-item">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="img-circle" ng-src="img/blog/android-desktop.png" width="40px" height="40px" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <div class="lv-title">The Newest</div>
+                                    <small class="lv-small">2 days ago</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- The right side buttons -->
+                <div style="position: relative; right: 10px; top: -30px; float: right">
+                    <h5 style="display: inline">456</h5> &nbsp &nbsp
+                    <span><i class="zmdi zmdi-hc-2x zmdi-favorite"></i></span> &nbsp &nbsp
+                    <span><i class="zmdi zmdi-hc-2x zmdi-bookmark"></i></span> &nbsp &nbsp
+                    <span><i class="zmdi zmdi-hc-2x zmdi-share"></i></span>
+                </div>
+            </div>
+            <!-- The Post Body -->
+            <div class="showblog">{{blogC.checkO.get("blogContent")}}</div>
+        </div>
+        <br>
+        <!-- Out of Card Section -->
+        <div class="blogcomments">
+            <!-- Add comment section -->
+            <div>
+                <div class="input-group fg-float">
+                    <div class="fg-line">
+                        <input type="text" class="form-control">
+                        <label class="fg-label">Join the Discussion</label>
+                    </div>
+                    <span class="input-group-addon last">
+                        <button class="btn btn-icon"><i class="zmdi zmdi-mail-send"></i></button>
+                    </span>
+                </div>
+            </div>
+            <br>
+            <!-- List User Comment -->
+            <div> <!-- Add repeat -->
+                <!-- Comment Head -->
+                <div>
+                    <div class="lv-body">
+
+                        <a class="lv-item" href="">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="lv-img-sm" data-ng-src="img/profile-pics/1.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <div class="lv-title">User</div>
+                                    <small class="lv-small">Status</small>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                <br>
+                <!-- Comment Body -->
+                <div>
+                    <p>Consumer review of sellers usually comment on service experienced, and dependability or trustworthiness of the seller.</p>
+                </div>
+                <!-- Comment Footer -->
+                <div>
+                    <button class="btn btn-sm btn-outline"><i class="zmdi zmdi-hc-lg zmdi-thumb-up"></i></button>
+                    <button class="btn btn-sm btn-outline"><i class="zmdi zmdi-hc-lg zmdi-thumb-down"></i></button>
+                    <button class="btn btn-sm btn-outline"><i class="zmdi zmdi-hc-lg zmdi-share"></i></button>
+                </div>
+                <br>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>

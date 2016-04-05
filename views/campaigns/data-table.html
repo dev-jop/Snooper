@@ -1,0 +1,156 @@
+<!--<div class="container" data-ng-controller="tableCtrl as tctrl">-->
+<!--<div ng-controller="campaingInitializer"> <span onload="angular.element(this).scope().init()"></span></div>-->
+<!--<div ng-controller="campaingInitializer"> <button ng-click="campaingInitializer.init()">Click</button></div>-->
+<div class="container">
+    <!--<div class="container" data-ng-controller="mydatatabledata as tctrl">-->
+    <div class="mini-charts">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="mini-charts-item bgm-cyan">
+                    <div class="clearfix">
+                        <div class="chart stats-bar" data-sparkline-bar></div>
+                        <div class="count">
+                            <small>Website Traffics</small>
+                            <h2>987,459</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="mini-charts-item bgm-lightgreen">
+                    <div class="clearfix">
+                        <div class="chart stats-bar-2" data-sparkline-bar></div>
+                        <div class="count">
+                            <small>Website Impressions</small>
+                            <h2>356,785K</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="mini-charts-item bgm-orange">
+                    <div class="clearfix">
+                        <div class="chart stats-line" data-sparkline-line></div>
+                        <div class="count">
+                            <small>Total Sales</small>
+                            <h2>$ 458,778</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="mini-charts-item bgm-bluegray">
+                    <div class="clearfix">
+                        <div class="chart stats-line-2" data-sparkline-line></div>
+                        <div class="count">
+                            <small>Support Tickets</small>
+                            <h2>23,856</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" style="background-color: #F4F4F4; height: 90px">
+            <h2>Currently Active Campaigns <small>View, Edit and Add Campaigns</small></h2>
+            <div class="block-header">
+                <span>
+                    <!--<button class="btn bgm-lightblue btn-icon" style="float: right;" data-swal-create-mission><i class="zmdi zmdi-plus"></i></button>-->
+                    <button class="btn bgm-lightblue btn-icon" style="float: right; position: relative; top: 5px;" data-backdrop="static" data-keyboard="false"  data-toggle="modal" data-target="#myModal"><i class="zmdi zmdi-plus"></i></button>
+                    <!--<button class="btn bgm-lightblue btn-icon" style="float: right;" data-backdrop="static" data-keyboard="false" ng-click="mfdCtrl.loadFormDialogs()"><i class="zmdi zmdi-plus"></i></button>-->
+                    <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+                </span>
+            </div>
+        </div>
+
+        <div class="card-body" style="margin-top: 20px">
+            <!--<div class="table-responsive">-->
+            <div class="table-responsive" ng-controller="campaignsTable as ntable">
+                <!--<div class="table-responsive" ng-controller="WithOptionsCtrl as wctrl">-->
+                <!--<table ng-table="tctrl.tableEdit" id="example1" class="table table-striped table-vmiddle display campaign">-->
+                <div style="margin-top: 20px; margin-bottom: 20px">
+                    <div class="col-sm-5">
+                        <div class="input-group fg-float">
+                            <span class="input-group-addon"><i class="zmdi zmdi-search"></i></span>
+                            <div class="fg-line">
+                                <input type="text" class="form-control" ng-model="filter.$">
+                                <label class="fg-label">Search (ID, Name & Client)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-5">
+                        <div class="toggle-switch" data-ts-color="blue">
+                            <label for="ts3" class="ts-label">Show Expired Campaigns</label>
+                            <input id="ts3" type="checkbox" hidden="hidden">
+                            <label for="ts3" class="ts-helper"></label>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br>
+                <table ng-table="ntable.tableParams" class="table table-striped table-vmiddle display campaign" show-filter="true">
+                    <!--<table id="example1" datatable="" class="table display" cellspacing="0" width="100%" ng-table="tctrl.tableEdit">-->
+                    <!--<table datatable="ng" id="example1" class="table table-striped display" cellspacing="0" width="100%">-->
+                    <!--<table id="example1" datatable="" dt-options="wctrl.dtOptions" dt-column-defs="wctrl.dtColumnDefs" class="table table-striped display" cellspacing="0" width="100%">-->
+                    <!--<table id="example1" class="table table-striped display" cellspacing="0" width="100%">-->
+                    <colgroup>
+                        <!--<col width="100">-->
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="100">
+                    </colgroup>
+                    <!--<thead>-->
+                    <!--<tr>-->
+                    <!--<th>ID</th>-->
+                    <!--<th>NAME</th>-->
+                    <!--<th>CLIENT</th>-->
+                    <!--<th>START DATE</th>-->
+                    <!--<th>END DATE</th>-->
+                    <!--<th>COMPLETION</th>-->
+                    <!--<th>ACTIONS</th>-->
+                    <!--</tr>-->
+                    <!--</thead>-->
+                    <!--<tr ng-repeat="w in tctrl.data" repeat-done="initDataTable()">-->
+                    <!--<tr ng-repeat="w in tctrl.data">-->
+                    <!--{{$data}}-->
+                    <!--<tr ng-repeat="w in ntable.pdata">-->
+                    <tr ng-repeat="w in $data">
+                        <!--<tr ng-repeat="w in tctrl.datas">-->
+                        <!--<td data-title="'ID'" sortable="'id'">-->
+                            <!--{{ w.id }}-->
+                        <!--</td>-->
+                        <td data-title="'NAME'" sortable="'name'">
+                            {{ w.name }}
+                        </td>
+                        <td data-title="'CLIENT'">
+                            {{ w.client }}
+                        </td>
+                        <td data-title="'START DATE'" sortable="'startdate'">
+                            {{ w.startdate.getFullYear() + " - " + w.startdate.getUTCMonth() + " - " + w.startdate.getUTCDate()}}
+                            <!--{{ w.startdate }}-->
+                        </td>
+                        <td data-title="'END DATE'" sortable="'enddate'">
+                            {{ w.enddate.getFullYear() + " - " + w.enddate.getUTCMonth() + " - " + w.enddate.getUTCDate()}}
+                            <!--{{ w.enddate }}-->
+                        </td>
+                        <td data-title="'COMPLETION'">
+                            {{ w.completed }}
+                        </td>
+                        <td data-title="'ACTIONS'" style="text-align: center">
+                            <button type="button" class="btn btn-danger btn-sm" ng-click="" data-swal-deleting-item><i class="zmdi zmdi-close"></i></button>
+                            <button type="button" class="btn btn-primary btn-sm" ng-click=""><i class="zmdi zmdi-edit"></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,309 @@
+<div class="container" data-ng-controller="tableCtrl as tctrl">
+    <div class="mini-charts">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="mini-charts-item bgm-cyan">
+                    <div class="clearfix">
+                        <div class="chart stats-bar" data-sparkline-bar></div>
+                        <div class="count">
+                            <small>Website Traffics</small>
+                            <h2>987,459</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="mini-charts-item bgm-lightgreen">
+                    <div class="clearfix">
+                        <div class="chart stats-bar-2" data-sparkline-bar></div>
+                        <div class="count">
+                            <small>Website Impressions</small>
+                            <h2>356,785K</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="mini-charts-item bgm-orange">
+                    <div class="clearfix">
+                        <div class="chart stats-line" data-sparkline-line></div>
+                        <div class="count">
+                            <small>Total Sales</small>
+                            <h2>$ 458,778</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="mini-charts-item bgm-bluegray">
+                    <div class="clearfix">
+                        <div class="chart stats-line-2" data-sparkline-line></div>
+                        <div class="count">
+                            <small>Support Tickets</small>
+                            <h2>23,856</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- The contents below the 4 charts -->
+    <div class="card">
+        <div class="card-header" style="background-color: #F4F4F4; height: 90px">
+            <h2>All Missions<small>A Complete List of All Missions</small></h2>
+            <br>
+            <div class="block-header">
+                <span>
+                    <button class="btn bgm-lightblue btn-icon" style="float: right; position: relative; bottom: 12px;" data-backdrop="static" data-keyboard="false"  data-toggle="modal" data-target="#myModal"><i class="zmdi zmdi-plus"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="card-body" style="margin-top: -20px">
+            <div class="table-responsive" ng-controller="missionsTable as ntable">
+                <br><br>
+                <div style="margin-top: 20px; margin-bottom: 20px">
+                    <div class="col-sm-5">
+                        <div class="input-group fg-float">
+                            <span class="input-group-addon"><i class="zmdi zmdi-search"></i></span>
+                            <div class="fg-line">
+                                <input type="text" class="form-control" ng-model="filter.$" autofocus>
+                                <label class="fg-label">Search (ID, Name & Client)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-7"></div>
+                </div>
+                <br><br><br>
+                <table ng-table="ntable.tableParams" id="missionTable" class="table table-striped table-vmiddle campaign" show-filter="true">
+                    <!--<table id="missionTable" class="table table-striped table-vmiddle campaign">-->
+                    <colgroup>
+                        <!--<col width="100">-->
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="200">
+                    </colgroup>
+                    <!--<thead>-->
+                    <!--<th>NAME</th>-->
+                    <!--<th>CLIENT</th>-->
+                    <!--<th>START DATE</th>-->
+                    <!--<th>END DATE</th>-->
+                    <!--<th>COMPLETION</th>-->
+                    <!--<th>LOCATION</th>-->
+                    <!--<th>ACTIONS</th>-->
+                    <!--</thead>-->
+                    <tr ng-repeat="w in $data">
+                        <!--<tr ng-repeat="w in ntable.data">-->
+                        <!--<td data-title="'ID'">-->
+                        <!--{{ w.id}}-->
+                        <!--</td>-->
+                        <td data-title="'NAME'" sortable="'name'">
+                            {{ w.name}}
+                        </td>
+                        <td data-title="'CLIENT'">
+                            <!--{{ w.type._result[0].get("type")}}-->
+                            {{ w.type._result[0].get("type")}}
+                        </td>
+                        <td data-title="'START DATE'" sortable="'startDate'">
+                            {{ w.startdate.getFullYear() + "-" + w.startdate.getUTCMonth() + "-" + w.startdate.getUTCDate()}}
+                            <!--{{ w.startdate.getFullYear()+"-"+w.startdate.getMonth()+"-"+w.startdate.getDay()}}-->
+                        </td>
+                        <td data-title="'END DATE'">
+                            <!--{{ w.enddate}}-->
+                            {{ w.enddate.getFullYear() + "-" + w.enddate.getUTCMonth() + "-" + w.enddate.getUTCDate()}}
+                        </td>
+                        <td data-title="'COMPLETION'">
+                            <uib-progressbar value="w.completed"></uib-progressbar>
+                            <!--{{w.completed}}-->
+                        </td>
+                        <td data-title="'LOCATION'">
+                            {{ w.location}}
+                        </td>
+                        <td data-title="'ACTIONS'" style="text-align: center">
+                            <button type="button" class="btn btn-danger btn-sm" ng-click="" swal-warning-delet-mission><i class="zmdi zmdi-close"></i></button>
+                            <button type="button" class="btn btn-primary btn-sm" ng-click=""><i class="zmdi zmdi-edit"></i></button>
+                            <button type="button" class="btn bgm-amber btn-sm" ng-click="" data-swal-copying-item-mission><i class="zmdi zmdi-check-all"></i></button>
+                            <button type="button" class="btn btn-success btn-sm" ng-click="ntable.gocheckpoint(w)"><i class="zmdi zmdi-arrow-right"></i></button>
+                            <button type="button" class="btn bgm-bluegray btn-sm" ng-click="tctrl.dashboard()"><i class="zmdi zmdi zmdi-chart-donut"></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" role="dialog" id="myModal">
+    <div class="modal-dialog" style="width: 900px;">
+        <!-- Modal content-->
+        <div class="modal-content" ng-controller="createmission as ctrl">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center">Add New Mission</h4><br>
+                <p class="text-center">Use the form below to add a new mission. Once you fill in these details you will be able to add all checkpoints.</p>
+            </div>
+            <form name="missionForm">
+                <!--<form ng-submit="ctrl.submit()" name="missionForm">-->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-6"> <!-- first column -->
+                            <p class="c-black f-500 m-t-0 m-b-10">Name</p>
+                            <!--<span ng-show="missionForm.uname.$error.required">This is a required field</span>-->
+                            <div class="form-group">
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="Enter name" ng-model="ctrl.name" ng-required="true">
+                                </div>
+                            </div>
+                            <p class="c-black f-500 m-t-0 m-b-10">Location</p>
+
+                            <div class="form-group">
+                                <div class="fg-line">
+                                    <input type="text" id="Autocomplete" ng-required="true" details="ctrl.details1" class="form-control" ng-model="ctrl.location" ng-autocomplete placeholder="Mission Location"></div>
+                            </div>
+                            <p class="c-black f-500 m-t-0 m-b-10">Submissions Allowed</p>
+                            <!--<span ng-show="missionForm.uname.$error.number">Please enter only numbers</span>-->
+                            <div class="form-group">
+                                <div class="fg-line">
+                                    <input type="number" ng-required="true" class="form-control" ng-model="ctrl.submissions" placeholder="eg: 50">
+                                </div>
+                            </div>
+                            <p class="c-black f-500 m-t-0 m-b-10">Mission Reward</p>
+
+                            <div class="form-group">
+                                <div class="fg-line">
+                                    <input type="number" ng-required="true" class="form-control" ng-model="ctrl.reward" placeholder="eg: 500 (Don't enter '$' symbol)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6"> <!-- second column -->
+
+                            <p class="c-black f-500 m-t-0 m-b-10">Mission Type</p>
+
+                            <div class="form-group">
+                                <div class="fg-line">
+                                    <div class="select">
+                                        <select class="form-control"   ng-model="ctrl.type" ng-required="true">
+                                            <option value="yPIJkCJrBI">Store-Check</option>
+                                            <option value="lhXnsbKwLM">Mystery Shopping</option>
+                                            <option value="8Eeg1wA8Q7">Consumer Survey</option>
+                                            <option value="VFlZSxKOzc">Product Feedback</option>
+                                            <option value="Vh1H4rm6s2">Ad Review</option>
+                                            <option value="8JBFybcNDJ">Spot & Click</option>
+                                            <option value="GHNGufhhJg">Contest</option>
+                                            <option value="fGGNgPWU4F">Ambassador</option>
+                                            <option value="pzUqKz6Puu">Eligibility Test</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="c-black f-500 m-t-0 m-b-10">Client</p>
+
+                            <div class="form-group">
+                                <div class="fg-line">
+                                    <div class="select">
+                                        <select class="form-control" ng-model="ctrl.client" ng-required="true">
+                                            <option>choose client</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="c-black f-500 m-t-0 m-b-10">Campaign</p>
+
+                            <div class="form-group">
+                                <div class="fg-line">
+                                    <div class="select">
+                                        <select class="form-control" ng-model="ctrl.campaign" ng-required="true">
+                                            <option ng-repeat="x in ctrl.camps" value="{{x.id}}">{{x.name}}</option>
+                                            <!--<option>Campaign Type</option>-->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="c-black f-500 m-t-0 m-b-10">Image</p>
+
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                    <span class="btn btn-primary btn-file m-r-10">
+                                                        <span class="fileinput-new">Select image</span>
+                                                        <span class="fileinput-exists">Change</span>
+                                                        <input id="picture" type="file" name="..." ng-model="ctrl.image">
+                                                    </span>
+                                    <span class="fileinput-filename" ng-model="ctrl.imageName"></span>
+                                    <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p class="c-black f-500 m-t-0 m-b-10">Minimum User Level</p>
+
+                            <div class="form-group">
+                                <div class="fg-line">
+                                    <div ng-rate-it ng-model="ctrl.minuserlevel" ng-required="true" step='1' resetable="false"  ></div>
+                                </div>
+                            </div>
+                            <p class="c-black f-500 m-t-0 m-b-10">Likes & Interests</p>
+
+                            <div class="form-group">
+                                <div class="fg-line">
+                                    <div ng-controller="likesAndInterests as likes">
+                                        <div ng-dropdown-multiselect options="likes.likesinterests" selected-model="likes.example11model" extra-settings="likes.likesSettings" group-by="group"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="c-black f-500 m-t-0 m-b-10">Mission Description</p>
+                            <div text-angular ng-model="ctrl.description"></div>
+                        </div>
+                        <div class="col-lg-6" data-ng-controller="DatepickerDemoCtrl">
+                            <p class="c-black f-500 m-t-0 m-b-10">Start Date</p>
+
+                            <div class="date-picker input-group dp-blue" ng-class="{ 'is-opened': opened1 == true }">
+                                <span class="input-group-addon"><i class="zmdi zmdi-calendar ma-icon"></i></span>
+                                <div class="fg-line" ng-class="{ 'fg-toggled': opened1 == true }">
+                                    <input ng-click="open($event, 'opened1')" ng-required="true" type="text" class="form-control" uib-datepicker-popup="{{format}}" show-weeks="false" ng-model="ctrl.startdate" is-open="opened1" min-date="minDate" datepicker-options="dateOptions" close-text="Close" placeholder="Select Date" />
+                                </div>
+                            </div>
+                            <p class="c-black f-500 m-t-10 m-b-10">End Date</p>
+
+                            <div class="date-picker input-group dp-blue" ng-class="{ 'is-opened': opened2 == true }">
+                                <span class="input-group-addon"><i class="zmdi zmdi-calendar ma-icon"></i></span>
+                                <div class="fg-line" ng-class="{ 'fg-toggled': opened2 == true }">
+                                    <input ng-click="open($event, 'opened2')" ng-required="true" type="text" class="form-control" uib-datepicker-popup="{{format}}" show-weeks="false" ng-model="ctrl.enddate" is-open="opened2" min-date="minDate" datepicker-options="dateOptions" close-text="Close" placeholder="Select Date" />
+                                </div>
+                            </div>
+                            <div data-ng-controller="formCtrl as fctrl">
+                                <p class="c-black f-500 m-t-15 m-b-10">Time Allowed</p>
+                                <small class="c-gray"><strong>Current value:</strong> {{ down = ((ctrl.timeallowed | number:0) - ctrl.timeallowed) > 0 ? (ctrl.timeallowed | number:0) - 1 : (ctrl.timeallowed | number:0) }} hour(s) {{ (ctrl.timeallowed - down)*60 | number:0 }} mins</small>
+
+                                <br><br>
+
+                                <div slider class="input-slider" ng-model="ctrl.timeallowed" start=0 end=15 step=0.25></div>
+
+                                <br>
+                            </div>
+                            <p class="c-black f-500 m-t-15 m-b-10">Mission Cost</p>
+
+                            <div class="form-group">
+                                <div class="fg-line">
+                                    <input type="number" class="form-control" ng-required="true" ng-model="ctrl.cost" placeholder="Cost to client">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="text-align: center">
+                    <button type="button" class="btn btn-default" data-swal-warning-form>Cancel</button>
+                    <button class="btn btn-primary" ng-click="ctrl.submit()" type="submit" data-dismiss="modal" ng-disabled="missionForm.$invalid" data-swal-success-form>Save & add mission</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

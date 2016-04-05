@@ -1,0 +1,162 @@
+<div class="container" data-ng-controller="tableCtrl as tctrl">
+    <div class="mini-charts">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="mini-charts-item bgm-cyan">
+                    <div class="clearfix">
+                        <div class="chart stats-bar" data-sparkline-bar></div>
+                        <div class="count">
+                            <small>Website Traffics</small>
+                            <h2>987,459</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="mini-charts-item bgm-lightgreen">
+                    <div class="clearfix">
+                        <div class="chart stats-bar-2" data-sparkline-bar></div>
+                        <div class="count">
+                            <small>Website Impressions</small>
+                            <h2>356,785K</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="mini-charts-item bgm-orange">
+                    <div class="clearfix">
+                        <div class="chart stats-line" data-sparkline-line></div>
+                        <div class="count">
+                            <small>Total Sales</small>
+                            <h2>$ 458,778</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="mini-charts-item bgm-bluegray">
+                    <div class="clearfix">
+                        <div class="chart stats-line-2" data-sparkline-line></div>
+                        <div class="count">
+                            <small>Support Tickets</small>
+                            <h2>23,856</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Add/Edit Mission Checkpoints <small>Build a mission by completing the form below</small></h2>
+            <div class="block-header">
+                <span>
+                    <!--<button class="btn bgm-lightblue btn-icon" style="float: right;" data-swal-create-mission><i class="zmdi zmdi-plus"></i></button>-->
+                    <button class="btn bgm-lightblue btn-icon" style="float: right;" data-backdrop="static" data-keyboard="false"  data-toggle="modal" data-target="#myModal"><i class="zmdi zmdi-plus"></i></button>
+                    <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+                </span>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog" style="width: 900px;">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title text-center">Add/Edit Checkpoint</h4><br>
+                                <p class="text-center">Fill in the information below to create a checkpoint. Press the 'Add Checkpoint' button once your are done. All fields are mandatory.</p>
+                            </div>
+
+                            <div ng-controller="myselection as mycont"> <!-- second checkpoint body -->
+                                <!--<div>{{mycont.checktype}}</div>-->
+                                <!--<ng-include mydirect></ng-include>-->
+                                <!--<ng-include src="mycont.myselfunc(TypeSelection.seltypetemp)"></ng-include>-->
+                                <ng-include src="mycont.myselfunc(mycont.seltypetemp)"></ng-include>
+                                <!--<ng-include src="mycont.seltypetemp"></ng-include>-->
+                                <!--<div>{{seltypetemp}}</div>-->
+                                <!--<div ng-include="mycont.checktype"></div>-->
+                                <!--<div class="modal-body"> &lt;!&ndash; third checkpoint body &ndash;&gt;-->
+                                <!--<p class="c-black f-500 m-t-0 m-b-10">Mission Type</p>-->
+
+                                <!--<div class="form-group">-->
+                                <!--<div class="fg-line">-->
+                                <!--<div class="select">-->
+                                <!--<select chosen class="w-100 form-control" select-picker>-->
+                                <!--<option value=1>First Type</option>-->
+                                <!--<option value=2 selected>Second Type</option>-->
+                                <!--<option value=3>Third Type</option>-->
+                                <!--<option value=4>Fourth Type</option>-->
+                                <!--</select>-->
+                                <!--</div>-->
+                                <!--</div>-->
+                                <!--</div>-->
+                                <!--<p class="c-black f-500 m-t-0 m-b-10">Mission Description</p>-->
+
+                                <!--<div class="form-group">-->
+                                <!--<div class="fg-line">-->
+                                <!--<textarea class="form-control" rows="6" placeholder="Start typing..."></textarea>-->
+                                <!--</div>-->
+                                <!--</div>-->
+
+                                <!--</div>-->
+
+                            </div>
+                            <!--<div class="modal-footer" style="text-align: center;">-->
+                                <!--&lt;!&ndash;<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>&ndash;&gt;-->
+                                <!--<button type="button" class="btn btn-default" data-swal-warning-form>Cancel</button>-->
+                                <!--&lt;!&ndash;<button class="btn btn-info" data-swal-text>Click me</button>&ndash;&gt;-->
+                                <!--<button type="button" class="btn btn-primary" ng-click="ctrl.submit()" data-dismiss="modal" data-swal-success-form>Save & add mission</button>-->
+                            <!--</div>-->
+                        </div>
+                        <!--<form ng-controller='MainCtrl as ctrl'>-->
+                        <!--<input type='text' ng-model='ctrl.username'/>-->
+                        <!--<input type='password' ng-model='ctrl.password'/>-->
+                        <!--<button ng-click='ctrl.submit()'>Submit</button>-->
+                        <!--</form>-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table ng-table="tctrl.tableEdit" class="table table-striped table-vmiddle">
+                    <colgroup>
+                        <col width="100">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="180">
+                    </colgroup>
+                    <tr ng-repeat="w in $data">
+                        <td data-title="'ORDER'">
+                            {{ w.id }}
+                        </td>
+                        <td data-title="'TYPE'">
+                            {{ w.name }}
+                        </td>
+                        <td data-title="'SHORT DESC'">
+                            {{ w.email }}
+                        </td>
+                        <td data-title="'QTY'">
+                            {{ w.username }}
+                        </td>
+                        <td data-title="'ACTIONS'">
+                            <button type="button" class="btn btn-danger btn-sm" ng-if="!w.$edit" ng-click="w.$edit = false"><i class="zmdi zmdi-close"></i></button>
+                            <button type="button" class="btn btn-primary btn-sm" ng-if="!w.$edit" ng-click="w.$edit = false"><i class="zmdi zmdi-search"></i></button>
+                            <button type="button" class="btn bgm-amber btn-sm" ng-if="!w.$edit" ng-click="w.$edit = false"><i class="zmdi zmdi-check-all"></i></button>
+                            <button type="button" class="btn btn-success btn-sm" ng-if="!w.$edit" ng-click="w.$edit = false"><i class="zmdi zmdi-arrows"></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

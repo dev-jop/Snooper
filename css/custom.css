@@ -1,0 +1,80 @@
+/*input[type=number]::-webkit-inner-spin-button,*/
+/*input[type=number]::-webkit-outer-spin-button {*/
+    /*-webkit-appearance: none;*/
+    /*margin: 0;*/
+/*}*/
+.mydrop {
+    backface-visibility: visible !important;
+    z-index: 1500 !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.ng-table-header {
+    text-align: left;
+}
+
+.pac-container {
+    z-index: 1051 !important;
+}
+
+.ta-editor {
+    min-height: 300px;
+    height: auto;
+    overflow: auto;
+    font-family: inherit;
+    font-size: 100%;
+    margin:20px 0;
+}
+
+@media screen and (min-width: 1024px) {
+    .showblog {
+        padding: 20px 150px;
+    }
+    .blogcomments {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+} @media screen and (max-width: 1024px) and (min-width: 760px) {
+    .showblog {
+        padding: 20px 100px;
+    }
+    .blogcomments {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+} @media screen and (max-width: 760px) and (min-width: 540px) {
+    .showblog {
+        padding: 10px 50px;
+    }
+    .blogcomments {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+} @media screen and (max-width: 540px) {
+    .showblog {
+        padding: 5px 5px;
+    }
+    .blogcomments {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+.withborder {
+    border: 5px solid;
+}
+
+.withborder:focus,
+.withborder.active {
+    color: #ffffff;
+    /*background-color: #126908;*/
+    /*border-color: #403287;*/
+    border: 5px solid #403287;
+}
+
+.withborder:hover,
+.withborder.active {
+    color: #ffffff;
+    border-color: #2196F3;
+}

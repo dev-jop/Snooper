@@ -1,0 +1,52 @@
+<div class="container" data-ng-controller="tableCtrl as tctrl">
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Add/Edit Mission Checkpoints <small>Build a mission by completing the form below</small></h2>
+            <div class="block-header">
+                <span>
+                    <button class="btn bgm-lightblue btn-icon" style="float: right;" data-swal-create-mission><i class="zmdi zmdi-plus"></i></button>
+                </span>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive ">
+                <table ng-table="tctrl.tableEdit" class="table table-striped table-vmiddle">
+                    <colgroup>
+                        <col width="100">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="180">
+                    </colgroup>
+                    <tbody ui:sortable ng:model="data">
+                    <tr ng-repeat="w in $data"
+                        ng-click="user.$selected = !user.$selected; changeSelection(user)"
+                        ng-class="{'active': user.$selected}"
+                        class="item" style="cursor: move;" >
+                        <td data-title="'ORDER'">
+                            {{ w.id }}
+                        </td>
+                        <td data-title="'TYPE'">
+                            {{ w.name }}
+                        </td>
+                        <td data-title="'SHORT DESC'">
+                            {{ w.email }}
+                        </td>
+                        <td data-title="'QTY'">
+                            {{ w.username }}
+                        </td>
+                        <td data-title="'ACTIONS'">
+                            <button type="button" class="btn btn-danger btn-sm" ng-if="!w.$edit" ng-click="w.$edit = false"><i class="zmdi zmdi-close"></i></button>
+                            <button type="button" class="btn btn-primary btn-sm" ng-if="!w.$edit" ng-click="w.$edit = false"><i class="zmdi zmdi-search"></i></button>
+                            <button type="button" class="btn bgm-amber btn-sm" ng-if="!w.$edit" ng-click="w.$edit = false"><i class="zmdi zmdi-check-all"></i></button>
+                            <button  style="cursor: move;" type="button" class="btn btn-success btn-sm" ng-click="user.$selected = !user.$selected; changeSelection(user)"><i class="zmdi zmdi-arrows"></i></button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>        
+</div>

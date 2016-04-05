@@ -1,0 +1,35 @@
+<div class="container">
+    <div ng-controller="reviewitems as item">
+        <div class="row card" ng-repeat="data in item.revitems"> <!-- write ng-repeat -->
+            <div class="col-md-5">
+                <h4><span ng-bind="data.checkpoint" ng-model="data.checkpoint"></span><br><small><span ng-bind="data.name" ng-model="data.name"></span></small></h4><br>
+                <p><span ng-bind="data.description" ng-model="data.description"></span></p>
+            </div>
+            <div class="col-md-5">
+                <h4>User Response</h4><br>
+                <span ng-bind="data.userreview" ng-model="data.userreview"></span>
+            </div>
+            <div class="col-md-2" style="text-align: center">
+                <br><br>
+                <!--<div class="row">-->
+                    <!--<button class="btn bgm-green" style="width: 150px; margin:3px;">Approve</button>-->
+                <!--</div>-->
+                <!--<div class="row">-->
+                    <!--<button class="btn bgm-red" style="width: 150px; margin:3px;">Reject</button>-->
+                <!--</div>-->
+                <div class="btn-group" style="box-shadow: none;" data-toggle="buttons">
+                    <label class="btn btn-success withborder" style="width: 150px; margin:3px;">
+                        <input type="radio" name="options" id="accept" autocomplete="off"> Approve
+                    </label>
+                    <label class="btn btn-danger withborder" style="width: 150px; margin:3px;">
+                        <input type="radio" name="options" id="reject" autocomplete="off"> Reject
+                    </label>
+                </div>
+                <br><br>
+            </div>
+        </div>
+        <div class="row" style="text-align: center">
+            <button type="button" class="btn btn-primary" ng-click="item.save()" data-swal-success-form>Save</button>
+        </div>
+    </div>
+</div>

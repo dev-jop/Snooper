@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/var/www/html/angular/js/controllers/ui-bootstrap.js</file>
+            <file>file:/var/www/html/angular/js/controllers/userCtrl.js</file>
+            <file>file:/var/www/html/angular/js/modules/ui.js</file>
+            <file>file:/var/www/html/angular/views/blogs/show.html</file>
+            <file>file:/var/www/html/angular/js/controllers/missionController.js</file>
+            <file>file:/var/www/html/angular/js/modules/media.js</file>
+            <file>file:/var/www/html/angular/views/blogs/create.html</file>
+            <file>file:/var/www/html/angular/views/profile-about.html</file>
+            <file>file:/var/www/html/angular/views/missions/table.html</file>
+            <file>file:/var/www/html/angular/views/missions/data-table.html</file>
+            <file>file:/var/www/html/angular/views/login.html</file>
+            <file>file:/var/www/html/angular/lockscreen.html</file>
+            <file>file:/var/www/html/angular/js/controllers/table.js</file>
+            <file>file:/var/www/html/angular/js/services.js</file>
+            <file>file:/var/www/html/angular/vendors/bower_components/flot/jquery.flot.resize.js</file>
+            <file>file:/var/www/html/angular/views/tables.html</file>
+            <file>file:/var/www/html/angular/views/data-table.html</file>
+            <file>file:/var/www/html/angular/views/dashboard/dashboard.html</file>
+            <file>file:/var/www/html/angular/views/dashboard/main.html</file>
+            <file>file:/var/www/html/angular/js/modules/map.js</file>
+            <file>file:/var/www/html/angular/views/data-table_2.html</file>
+            <file>file:/var/www/html/angular/views/submissions/data-table.html</file>
+            <file>file:/var/www/html/angular/js/app.js</file>
+            <file>file:/var/www/html/angular/views/user/user-table.html</file>
+            <file>file:/var/www/html/angular/js/lib/angular-google-maps.min.js</file>
+            <file>file:/var/www/html/angular/js/config.js</file>
+            <file>file:/var/www/html/angular/js/controllers/main.js</file>
+            <file>file:/var/www/html/angular/js/templates.js</file>
+            <file>file:/var/www/html/angular/views/common.html</file>
+            <file>file:/var/www/html/angular/views/blogs/table.html</file>
+            <file>file:/var/www/html/angular/login.html</file>
+            <file>file:/var/www/html/angular/views/pricing-table.html</file>
+            <file>file:/var/www/html/angular/views/profile.html</file>
+            <file>file:/var/www/html/angular/views/data-table_1.html</file>
+            <file>file:/var/www/html/angular/js/controllers/formsubmit.js</file>
+            <file>file:/var/www/html/angular/js/controllers/selection.js</file>
+            <file>file:/var/www/html/angular/index.html</file>
+            <file>file:/var/www/html/angular/views/alerts.html</file>
+            <file>file:/var/www/html/angular/views/common-2.html</file>
+            <file>file:/var/www/html/angular/js/modules/calendar.js</file>
+            <file>file:/var/www/html/angular/package.json</file>
+            <file>file:/var/www/html/angular/views/submissions/reviews.html</file>
+            <file>file:/var/www/html/angular/views/checkforms/checkpoint4.html</file>
+            <file>file:/var/www/html/angular/views/checkpoints/checkpoint4.html</file>
+            <file>file:/var/www/html/angular/views/profile-timeline.html</file>
+            <file>file:/var/www/html/angular/views/checkforms/map.html</file>
+            <file>file:/var/www/html/angular/views/checkpoints/data-table.html</file>
+        </group>
+    </open-files>
+</project-private>

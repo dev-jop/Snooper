@@ -1,0 +1,49 @@
+<div class="container" data-ng-controller="tableCtrl as tctrl">
+    <div class="card">
+        <div class="card-header" style="background-color: #F4F4F4;">
+            <h2>Submissions <small>Review Submissions made by users</small></h2>
+            <!--<div class="block-header">-->
+            <!--<span>-->
+            <!--&lt;!&ndash;<button class="btn bgm-lightblue btn-icon" style="float: right;" data-swal-create-mission><i class="zmdi zmdi-plus"></i></button>&ndash;&gt;-->
+            <!--<button class="btn bgm-lightblue btn-icon" style="float: right;" data-backdrop="static" data-keyboard="false"  data-toggle="modal" data-target="#myModal"><i class="zmdi zmdi-plus"></i></button>-->
+            <!--&lt;!&ndash;<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>&ndash;&gt;-->
+            <!--</span>-->
+            <!--</div>-->
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table ng-table="tctrl.tableEdit" class="table table-striped table-vmiddle">
+                    <colgroup>
+                        <col width="100">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="auto">
+                        <col width="50">
+                    </colgroup>
+                    <tr ng-repeat="w in $data">
+                        <td data-title="'DATE'">
+                            {{ w.id }}
+                        </td>
+                        <td data-title="'NAME'">
+                            {{ w.name }}
+                        </td>
+                        <td data-title="'USER'">
+                            {{ w.email }}
+                        </td>
+                        <td data-title="'COMPLETED'">
+                            {{ w.username }}
+                        </td>
+                        <td data-title="'STATUS'">
+                            {{ w.name }}
+                        </td>
+                        <td data-title="'ACTIONS'" style="text-align: center">
+                            <button type="button" class="btn btn-primary btn-sm" ng-click="tctrl.reviews()"><i class="zmdi zmdi-search"></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
